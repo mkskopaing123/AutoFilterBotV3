@@ -58,8 +58,8 @@ async def filter(client, message):
         if files:
             for file in files:
                 file_id = file.file_id
-                filename, link in zip(filenames, links)
                 filename = f"[{get_size(file.file_size)}] {file.file_name}"
+            for filename, link in zip(filenames, links):
                 btn.append(
                     [InlineKeyboardButton(text=f"{filename}" ,url=f"{link}")]
                     )
@@ -126,8 +126,8 @@ async def group(client, message):
         if files:
             for file in files:
                 file_id = file.file_id
-                filename, link in zip(filenames, links)
                 filename = f"[{get_size(file.file_size)}] {file.file_name}"
+            for filename, link in zip(filenames, links):
                 btn.append(
                     [InlineKeyboardButton(text=f"{filename}", url=f"{link}")]
                 )
