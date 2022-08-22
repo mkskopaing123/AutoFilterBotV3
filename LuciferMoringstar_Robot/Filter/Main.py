@@ -58,9 +58,10 @@ async def filter(client, message):
         if files:
             for file in files:
                 file_id = file.file_id
+                filename, link in zip(filenames, links)
                 filename = f"[{get_size(file.file_size)}] {file.file_name}"
                 btn.append(
-                    [InlineKeyboardButton(text=f"{filename}",callback_data=f"pr0fess0r_99#{file_id}")]
+                    [InlineKeyboardButton(text=f"{filename}" ,url=f"{link}")]
                     )
         else:
             await client.send_sticker(chat_id=message.from_user.id, sticker='CAADBQADMwIAAtbcmFelnLaGAZhgBwI')
@@ -125,9 +126,10 @@ async def group(client, message):
         if files:
             for file in files:
                 file_id = file.file_id
+                filename, link in zip(filenames, links)
                 filename = f"[{get_size(file.file_size)}] {file.file_name}"
                 btn.append(
-                    [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=pr0fess0r_99_-_-_-_{file_id}")]
+                    [InlineKeyboardButton(text=f"{filename}", url=f"{link}")]
                 )
         else:
             return
